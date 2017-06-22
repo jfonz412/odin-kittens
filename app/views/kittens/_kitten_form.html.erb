@@ -1,0 +1,11 @@
+<%= form_for(@kitten, url:yield(:url)) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br>
+	<%= f.label :age %>
+	<%= f.number_field :age %><br>
+	<%= f.label :cuteness %>
+	<%= f.number_field :cuteness, min: 1, max: 10 %><br>
+	<%= f.label :softness %>
+	<%= f.number_field :softness, min: 1, max: 10 %><br>
+	<%= f.submit "Submit Kitten" %>
+<% end %>
