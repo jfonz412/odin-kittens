@@ -16,10 +16,18 @@ class KittensController < ApplicationController
 
 	def index
 		@kittens = Kitten.all
+		respond_to do |format|
+			format.html # index.html.erb
+			format.json { render :json => @kittens } # def #as_json in model to limit attributes
+		end
 	end
 
 	def show
 		@kitten = Kitten.find(params[:id])
+		respond_to do |format|
+			format.html # show.html.erb
+			format.json { render :json => @kitten } # def #as_json in model to limit attributes
+		end
 	end
 
 	def edit
